@@ -1,5 +1,11 @@
 #! /usr/bin/env bash
 
+# This script is called by the GitHub action in .github/ to spawn a bare-metal
+# machine on Packet to build a NixOS image for Digital Ocean (which requires
+# the "kvm" feature).
+# The machine is automatically deleted after an hour.
+# Currently after spawning the machine, nothing is built on it.
+
 set -e
 
 TERMINATION_TIME=$(date --utc --iso-8601=seconds --date='1 hour')
