@@ -15,6 +15,8 @@ rec {
   };
 
   # Build with nix-build -A <attr>
+  # The image requires the "kvm" feature to be build, e.g. on Packet.
   image = os.config.system.build.digitalOceanImage;
+  # The toplevel image can be build directly by a GitHub action.
   toplevel = os.config.system.build.toplevel;
 }
