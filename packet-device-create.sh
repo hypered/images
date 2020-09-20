@@ -6,7 +6,7 @@ TERMINATION_TIME=$(date --utc --iso-8601=seconds --date='1 hour')
 
 wget --quiet \
   https://github.com/packethost/packet-cli/releases/download/0.0.8/packet-linux-amd64
-sha256sum --check packet-linux-amd64-0.0.8.sha256
+echo "3d101cd6b1c7f5c3c7f185210d6d6be6faba941b3295b0c0236f6272a45d3aea  packet-linux-amd64" | sha256sum --check
 
 chmod +x packet-linux-amd64
 ./packet-linux-amd64 device create \
